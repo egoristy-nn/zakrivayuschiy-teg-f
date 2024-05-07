@@ -42,18 +42,18 @@
   margin-top: clamp(120px, 37.3%, 136px);
 }
 
-.header-title h1,
-.header-title h2 {
+.header-title .logo,
+.header-title .title {
   text-align: center;
   color: var(--accent-color);
   font-weight: 400;
 }
 
-.header-title h1 {
+.header-title .logo {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
 
-.header-title h2 {
+.header-title .title {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   margin-top: 20px;
   margin-bottom: 25px;
@@ -102,24 +102,24 @@
 .theme-menu__button:focus-visible {
   position: relative;
   outline: none;
-  animation: opacity 0.3s ease;
-  animation-fill-mode: forwards;
+  opacity: 0.6;
+  transition: opacity 0.3s;
 }
 
 .theme-menu__button:focus-visible::after {
-  animation: scale 0.3s ease;
-  animation-fill-mode: forwards;
+  width: 100%;
+  transition: width 0.3s;
 }
 
 .theme-menu__button:hover {
-  animation: opacity 0.3s ease;
-  animation-fill-mode: forwards;
+  opacity: 0.6;
+  transition: opacity 0.3s;
 }
 
 .theme-menu__button:disabled {
   pointer-events: none;
-  animation: opacity 0.3s ease;
-  animation-fill-mode: forwards;
+  opacity: 0.6;
+  transition: opacity 0.3s;
 }
 
 .theme-menu__button:disabled::before {
@@ -131,7 +131,7 @@
 
 .main {
   display: grid;
-  gap: 55px;
+  gap: 52px;
 }
 
 .section {
@@ -140,7 +140,7 @@
   display: grid;
 }
 
-.section h3 {
+.section .section-title {
   --wght: 700px;
   font-size: 18px;
   margin: 5px 24px 3px 12px;
@@ -148,11 +148,9 @@
 
 .image-label {
   position: relative;
-  margin-bottom: 21px;
-}
-
-.image-label:has(.blur, .invert, .filters) {
-  outline: 2px solid var(--accent-color);
+  margin-bottom: 25px;
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
 }
 
 .image {
@@ -186,6 +184,7 @@
   gap: 27px;
   margin: 0 25px 26px 25px;
   font-size: 18px;
+  line-height: 1.16;
   --wght: 400px;
 }
 
@@ -213,9 +212,8 @@
 
 .card__icon-button:focus-visible {
   outline: 2px solid transparent;
-  animation: focus 0.3s ease;
-  animation-fill-mode: forwards;
-  transition: animation 0.3s;
+  outline: 2px solid var(--accent-color);
+  transition: outline 0.08s;
 }
 
 /*-----------состояния иконки сердечка---------------------*/
@@ -277,7 +275,7 @@
 .like-icon.is-liked .sparks {
   animation: sparksOpacity 0.3s ease-in;
   animation-delay: 0.3s;
-  animation-fill-mode: forwards;
+  animation-fill-mode: backwards;
 }
 
 /*------------------------------------------------------*/
@@ -317,8 +315,8 @@
 
 .button:focus-visible {
   outline: none;
-  animation: shadow 0.3s ease;
-  animation-fill-mode: forwards;
+  box-shadow: 2px 2px 0 0 var(--accent-color);
+  transition: box-shadow 0.3s;
 }
 
 .button .button__text {
@@ -376,7 +374,7 @@
   overflow: hidden;
 }
 
-dialog:not([open]) {
+.dialog:not([open]) {
   pointer-events: none;
   opacity: 0;
 }
@@ -399,7 +397,7 @@ dialog:not([open]) {
   text-transform: uppercase;
 }
 
-dialog::backdrop {
+.dialog::backdrop {
   background-color: #000;
   opacity: 0.7;
 }
