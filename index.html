@@ -488,7 +488,7 @@
             width="21"
             height="21"
             viewBox="0 0 40 40">
-            <use href="./svg/floppy.svg#floppy">
+            <use href="svg/floppy.svg#floppy">
           </svg>
           Сохранить на память
         </span>
@@ -498,13 +498,14 @@
           width="39"
           height="39"
           viewBox="0 0 40 40">
-          <use href="./svg/floppy.svg#floppy">
+          <use href="svg/floppy.svg#floppy">
           </svg>
         <h4 class="dialog-text">Вставьте дискету, чтобы продолжить</h4>
-        <button class="button dialog-button" type="button" 
-        onclick="window['dialog-id'].close()">
-          <span class="button__text">Ок</span>
-        </button>
+        <form method="dialog">
+          <button class="button dialog-button">
+            <span class="button__text">Ок</span>
+          </button>
+        </form>
       </dialog>
     </main>
     <script src="./scripts/like.js"></script>
