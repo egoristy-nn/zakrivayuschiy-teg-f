@@ -18,7 +18,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: 400;
+  font-variation-settings: "wght" var(--wght), "wght" var(--wght);
   background-color: var(--background-color);
   color: var(--accent-color);
   background-image: var(--background-image);
@@ -141,7 +141,7 @@
 }
 
 .section h3 {
-  font-weight: var(--card-title-font-weight);
+  --wght: 700px;
   font-size: 18px;
   margin: 5px 24px 3px 12px;
 }
@@ -186,7 +186,7 @@
   gap: 27px;
   margin: 0 25px 26px 25px;
   font-size: 18px;
-  font-weight: var(--card-font-weight);
+  --wght: 400px;
 }
 
 .block-button {
